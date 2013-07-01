@@ -2,7 +2,7 @@
 
 namespace IDCI\Bundle\FilterFormBundle\Form\EventListener;
 
-use Symfony\Component\Form\Event\DataEvent;
+use Symfony\Component\Form\FormEvent;
 use Symfony\Component\Form\FormFactoryInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\Form\FormEvents;
@@ -21,7 +21,7 @@ class QueringFilterSubscriber implements EventSubscriberInterface
     public static function getSubscribedEvents()
     {
         return array(
-            FormEvents::POST_BIND => 'updateFilters',
+            FormEvents::POST_SUBMIT => 'updateFilters',
         );
     }
 
